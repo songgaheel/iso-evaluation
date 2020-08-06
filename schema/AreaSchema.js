@@ -2,7 +2,7 @@ const connectDB = require('../connectDB');
 const schema = connectDB.mongoose.Schema;
 const areaSchema = new schema({
     "name": String,
-    "areaType": [{ data: 'Inside' }, { data: 'Outside' }],
+    "areaType": [{ type: String, defalt: 'Inside' }, { type: String, defalt: 'Outside' }],
     "department": {
         type: schema.Types.ObjectId,
         ref: 'departments'

@@ -30,4 +30,4 @@ const activitySchema = new schema({
     },
 });
 //create collection
-module.exports.activitySchema = activitySchema;
+module.exports.activitySchemas = activitySchema;

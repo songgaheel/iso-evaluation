@@ -1,7 +1,7 @@
 const connectDB = require('../connectDB');
 const schema = connectDB.mongoose.Schema;
 const userSchema = new schema({
-    username: String,
+    username: { type: String, unique: true },
     password: String,
     name: String,
     surname: String,

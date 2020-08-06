@@ -12,7 +12,7 @@ const WISchema = require('./schema/WISchema');
 const ImproveWorkSchema = require('./schema/ImproveWorkSchema');
 
 const User = mongoose.model('user', UserSchema.userSchema);
-const Activity = mongoose.model('activity', ActivitySchema.activitySchema);
+const Activity = mongoose.model('activity', ActivitySchema.activitySchemas);
 const Area = mongoose.model('area', AreaSchema.areaSchema);
 const Department = mongoose.model('department', DepartmentSchema.departmentSchema);
 const Company = mongoose.model('company', CompanySchema.companySchema);
