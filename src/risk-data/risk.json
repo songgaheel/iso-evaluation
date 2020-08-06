@@ -1,0 +1,100 @@
+[{
+        "name": "แสงสว่าง",
+        "defaultData": 1,
+        "sources": {
+            "environment": {
+                "enable": 1,
+                "enType": "ด้านกายภาพ (Physical)"
+            },
+            "equipment": 0,
+            "material": 0,
+            "unsafeac": {
+                "enable": 0
+            },
+            "unsafecondition": {
+                "enable": 0
+            },
+            "peoplesocial": {
+                "enable": 0
+            }
+        },
+        "environment": {
+            "resource": 0,
+            "pollution": 0,
+            "status": {
+                "normal": 0,
+                "abnormal": 0,
+                "emergency": 0,
+                "law": 0
+            }
+        },
+        "security": {
+            "safety": 0,
+            "health": 1,
+            "risk": "ไม่ได้มาตรฐานตามกฎหมาย",
+            "harzard": "โรคสมรรถภาพตา",
+            "status": {
+                "normal": 0,
+                "abnormal": 1,
+                "emergency": 0,
+                "law": 1
+            }
+        }
+    },
+    {
+        "name": "",
+        "defaultData": 1,
+        "sources": {
+            "environment": {
+                "enable": 0,
+                "enType": [
+                    ""
+                ]
+            },
+            "equipment": 0,
+            "material": 0,
+            "unsafeac": {
+                "enable": 0,
+                "acType": [
+                    ""
+                ]
+            },
+            "unsafecondition": {
+                "enable": 0,
+                "conditionType": [
+                    ""
+                ]
+            },
+            "peoplesocial": {
+                "enable": 0,
+                "peopleType": [
+                    ""
+                ]
+            }
+        },
+        "environment": {
+            "resource": 0,
+            "pollution": 0,
+            "aspect": "",
+            "impact": "",
+            "status": {
+                "normal": 0,
+                "abnormal": 0,
+                "emergency": 0,
+                "law": 0
+            }
+        },
+        "security": {
+            "safety": 0,
+            "health": 0,
+            "risk": "",
+            "harzard": "",
+            "status": {
+                "normal": 0,
+                "abnormal": 0,
+                "emergency": 0,
+                "law": 0
+            }
+        }
+    }
+]
