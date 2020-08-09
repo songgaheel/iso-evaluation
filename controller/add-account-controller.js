@@ -7,12 +7,10 @@ const User = mongoose.model('users', UserSchema.userSchema);
 const Department = mongoose.model('departments', DepartmentSchema.departmentSchema);
 
 async function addUser(req, res) {
-
     const admin = {
         username: req.body.adminusername,
         password: req.body.adminpassword,
     };
-
     const userdata = await User.find({ username: admin.username });
     const resultHash = await bcrypt.compare(admin.password, userdata[0].password);
 

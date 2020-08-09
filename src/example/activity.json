@@ -6,7 +6,7 @@
             "staff": 1,
             "vendor": 1,
             "customer": 1,
-            "comunity": 1,
+            "community": 1,
             "etc": {
                 "enable": 1,
                 "detail": "farmer"
@@ -16,7 +16,7 @@
             "staff": 1,
             "vendor": 1,
             "customer": 0,
-            "comunity": 0,
+            "community": 0,
             "etc": {
                 "enable": 0,
                 "detail": ""

@@ -11,10 +11,10 @@ const Company = mongoose.model('companies', CompanySchema.companySchema);
 
 async function addCompany(req, res) {
     console.log('start');
-    const companny = {
+    const company = {
         name: req.body.name,
     };
-    const newCompany = Company(companny);
+    const newCompany = Company(company);
     await newCompany.save();
     const ret = {
         newCompany
@@ -31,7 +31,7 @@ async function addDepartment(req, res) {
     };
     const newDepartment = Department(department);
     await newDepartment.save();
-    const company = await Company.updateOne({ _id: newDepartment.companny }, {
+    const company = await Company.updateOne({ _id: newDepartment.company }, {
         $push: { departments: newDepartment._id }
     });
     const ret = {
@@ -46,11 +46,11 @@ async function addArea(req, res) {
     const area = {
         name: req.body.name,
         areaType: req.body.areaType,
-        department: req.body.department
     };
+    const departmentID = req.body.department;
     const newArea = Area(area);
     await newArea.save();
-    const department = await Department.updateOne({ _id: newArea.department }, {
+    const department = await Department.updateOne({ _id: departmentID }, {
         $push: { areas: newArea._id }
     });
     const ret = {
@@ -83,7 +83,7 @@ async function addActivity(req, res) {
             community: req.body.effect.community,
             etc: {
                 enable: req.body.effect.etc.enable,
-                detail: req.body.effect.etc.enable
+                detail: req.body.effect.etc.detail
             }
         }
     };

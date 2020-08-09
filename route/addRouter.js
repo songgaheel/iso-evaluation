@@ -7,7 +7,6 @@ const router = express.Router();
 router
     .route('/account/user')
     .post(addUserAccounct.addUser);
-
 router
     .route('/companystructure/company')
     .post(addCompany.addCompany);
