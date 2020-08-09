@@ -8,7 +8,7 @@ const activitySchema = new schema({
         staff: Boolean,
         vendor: Boolean,
         customer: Boolean,
-        comunity: Boolean,
+        community: Boolean,
         etc: {
             enable: Boolean,
             detail: String
@@ -18,7 +18,7 @@ const activitySchema = new schema({
         staff: Boolean,
         vendor: Boolean,
         customer: Boolean,
-        comunity: Boolean,
+        community: Boolean,
         etc: {
             enable: Boolean,
             detail: String
