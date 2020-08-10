@@ -9,7 +9,7 @@ const Area = mongoose.model('areas', AreaSchema.areaSchema);
 const Department = mongoose.model('departments', DepartmentSchema.departmentSchema);
 const Company = mongoose.model('companies', CompanySchema.companySchema);
 
-async function addCompany(req, res) {
+async function createCompany(req, res) {
     console.log('start');
     const company = {
         name: req.body.name,
@@ -23,7 +23,7 @@ async function addCompany(req, res) {
 }
 
 
-async function addDepartment(req, res) {
+async function createDepartment(req, res) {
     console.log('start');
     const department = {
         name: req.body.name,
@@ -41,7 +41,7 @@ async function addDepartment(req, res) {
     res.send(ret);
 }
 
-async function addArea(req, res) {
+async function createArea(req, res) {
     console.log('start');
     const area = {
         name: req.body.name,
@@ -60,7 +60,7 @@ async function addArea(req, res) {
     res.send(ret);
 }
 
-async function addActivity(req, res) {
+async function createActivity(req, res) {
     console.log('start');
     const activity = {
         name: req.body.name,
@@ -95,7 +95,7 @@ async function addActivity(req, res) {
     res.send(ret);
 }
 
-module.exports.addCompany = addCompany;
-module.exports.addDepartment = addDepartment;
-module.exports.addArea = addArea;
-module.exports.addActivity = addActivity;
+module.exports.createCompany = createCompany;
+module.exports.createDepartment = createDepartment;
+module.exports.createArea = createArea;
+module.exports.createActivity = createActivity;
