@@ -24,5 +24,22 @@ async function listWork(req, res) {
     }
 
 }
+async function deleteWork(req, res) {
+    const listWork = req.body;
+    const result = [{}];
+    //console.log(listWork);
+    //res.send(listWork);
 
+    for (let index = 0; index < listWork.length; index++) {
+        result[index] = await Work.deleteOne({ _id: listWork[index]._id }, (err) => {
+            if (err) return err;
+        });
+        if (index == listWork.length - 1) {
+            res.send(result);
+            console.log(listWork);
+        }
+    }
+}
+
+module.exports.deleteWork = deleteWork;
 module.exports.listWork = listWork;
