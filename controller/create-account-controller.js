@@ -6,7 +6,7 @@ const DepartmentSchema = require('../schema/DepartmentSchema');
 const User = mongoose.model('users', UserSchema.userSchema);
 const Department = mongoose.model('departments', DepartmentSchema.departmentSchema);
 
-async function addUser(req, res) {
+async function createUser(req, res) {
     const admin = {
         username: req.body.adminusername,
         password: req.body.adminpassword,
@@ -42,4 +42,4 @@ async function addUser(req, res) {
 }
 
 
-module.exports.addUser = addUser;
+module.exports.createUser = createUser;

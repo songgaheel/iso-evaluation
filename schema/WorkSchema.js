@@ -3,12 +3,13 @@ const schema = connectDB.mongoose.Schema;
 const workSchema = new schema({
     name: String,
     createDate: Date,
+    progress: String, // 1 2 3 4 and complete
     modifiedDate: Date,
     user: {
         type: schema.Types.ObjectId,
         ref: 'users'
     },
-    compay: {
+    company: {
         type: schema.Types.ObjectId,
         ref: 'companies'
     },

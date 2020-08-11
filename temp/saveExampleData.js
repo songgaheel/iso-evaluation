@@ -18,38 +18,40 @@ const Area = mongoose.model('areas', AreaSchema.areaSchema);
 const Department = mongoose.model('departments', DepartmentSchema.departmentSchema);
 const Company = mongoose.model('companies', CompanySchema.companySchema);
 
+function saveExampleData() {
+    for (let index = 0; index < userData.length; index++) {
+        const element = User(userData[index]);
+        element.save()
+            .then(data => { console.log(data); })
+            .catch(err => { console.log(err); });
+    }
 
-for (let index = 0; index < userData.length; index++) {
-    const element = User(userData[index]);
-    element.save()
-        .then(data => { console.log(data); })
-        .catch(err => { console.log(err); });
-}
+    for (let index = 0; index < activityData.length; index++) {
+        const element = Activity(activityData[index]);
+        element.save()
+            .then(data => { console.log(data); })
+            .catch(err => { console.log(err); });
+    }
 
-for (let index = 0; index < activityData.length; index++) {
-    const element = Activity(activityData[index]);
-    element.save()
-        .then(data => { console.log(data); })
-        .catch(err => { console.log(err); });
-}
+    for (let index = 0; index < areaData.length; index++) {
+        const element = Area(areaData[index]);
+        element.save()
+            .then(data => { console.log(data); })
+            .catch(err => { console.log(err); });
+    }
 
-for (let index = 0; index < areaData.length; index++) {
-    const element = Area(areaData[index]);
-    element.save()
-        .then(data => { console.log(data); })
-        .catch(err => { console.log(err); });
-}
+    for (let index = 0; index < departmentData.length; index++) {
+        const element = Department(departmentData[index]);
+        element.save()
+            .then(data => { console.log(data); })
+            .catch(err => { console.log(err); });
+    }
 
-for (let index = 0; index < departmentData.length; index++) {
-    const element = Department(departmentData[index]);
-    element.save()
-        .then(data => { console.log(data); })
-        .catch(err => { console.log(err); });
+    for (let index = 0; index < companyData.length; index++) {
+        const element = Company(companyData[index]);
+        element.save()
+            .then(data => { console.log(data); })
+            .catch(err => { console.log(err); });
+    }
 }
-
-for (let index = 0; index < companyData.length; index++) {
-    const element = Company(companyData[index]);
-    element.save()
-        .then(data => { console.log(data); })
-        .catch(err => { console.log(err); });
-}
+saveExampleData();
