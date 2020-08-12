@@ -14,9 +14,22 @@ const Work = mongoose.model('works', WorkSchema.workSchema);
 
 async function CreateWorkListDataStep1(req, res) {
     const data = await Company.find({})
-        .populate('department');
+        .populate('departments');
 
     res.send(data);
+    console.log(data);
+}
+
+async function CreateWorkListDataStep2(req, res) {
+    const department = req.body.department;
+    const data = await Department.findOne({ _id: department })
+        .populate({
+            path: 'areas',
+            populate: { path: 'activities' }
+        });
+
+    res.send(data);
+    console.log(data);
 }
 
 async function createWork(req, res) {
@@ -44,3 +57,4 @@ async function createWork(req, res) {
 
 module.exports.createWork = createWork;
 module.exports.CreateWorkListDataStep1 = CreateWorkListDataStep1;
+module.exports.CreateWorkListDataStep2 = CreateWorkListDataStep2;

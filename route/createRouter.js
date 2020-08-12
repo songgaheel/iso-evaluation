@@ -27,7 +27,7 @@ router
     .post(createWork.CreateWorkListDataStep1);
 router
     .route('/home/work/step2')
-    .post(createWork.CreateWorkListDataStep1);
+    .post(createWork.CreateWorkListDataStep2);
 router
     .route('/home/work/step3')
     .post(createWork.CreateWorkListDataStep1);
