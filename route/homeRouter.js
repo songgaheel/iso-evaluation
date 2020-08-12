@@ -1,13 +1,13 @@
 const express = require('express');
-const readWork = require('../controller/read-work');
+const homeWork = require('../controller/home-work');
 
 const router = express.Router();
 
 router
     .route('/')
-    .get(readWork.listWork);
+    .get(homeWork.listWork);
 router
     .route('/')
-    .delete(readWork.deleteWork);
+    .delete(homeWork.deleteWork);
 
 module.exports = router;
