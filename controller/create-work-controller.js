@@ -1,7 +1,23 @@
 const mongoose = require('mongoose');
 const WorkSchema = require('../schema/WorkSchema');
+const ActivitySchema = require('../schema/ActivitySchema'); // require default data
+const AreaSchema = require('../schema/AreaSchema'); // require default data
+const DepartmentSchema = require('../schema/DepartmentSchema'); // require default data
+const CompanySchema = require('../schema/CompanySchema'); // require default data
+
+const Activity = mongoose.model('activities', ActivitySchema.activitySchemas);
+const Area = mongoose.model('areas', AreaSchema.areaSchema);
+const Department = mongoose.model('departments', DepartmentSchema.departmentSchema);
+const Company = mongoose.model('companies', CompanySchema.companySchema);
 
 const Work = mongoose.model('works', WorkSchema.workSchema);
+
+async function CreateWorkListDataStep1(req, res) {
+    const data = await Company.find({})
+        .populate('department');
+
+    res.send(data);
+}
 
 async function createWork(req, res) {
     const work = {
@@ -27,3 +43,4 @@ async function createWork(req, res) {
 }
 
 module.exports.createWork = createWork;
+module.exports.CreateWorkListDataStep1 = CreateWorkListDataStep1;

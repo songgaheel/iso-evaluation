@@ -4,6 +4,7 @@ const cors = require('cors');
 const loginController = require('./controller/login-controller');
 const createRouter = require('./route/createRouter');
 const homeRouter = require('./route/homeRouter');
+const updateRouter = require('./route/updateRouter');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.post('/login', loginController.login);
 app.use('/create', createRouter);
 app.use('/home', homeRouter);
+app.use('/update', updateRouter);
 
 const port = process.env.port || 5000;
 app.listen(port, function() {
