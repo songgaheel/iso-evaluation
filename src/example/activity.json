@@ -1,0 +1,101 @@
+[{
+        "name": "Activity A",
+        "activityType": "routine",
+        "location": "Inside",
+        "operation": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 1,
+            "community": 1,
+            "etc": {
+                "enable": 1,
+                "detail": "farmer"
+            }
+        },
+        "effect": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 0,
+            "community": 0,
+            "etc": {
+                "enable": 0,
+                "detail": ""
+            }
+        }
+    },
+    {
+        "name": "Activity B",
+        "activityType": "non-routine",
+        "location": "Outside",
+        "operation": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 1,
+            "comunity": 1,
+            "etc": {
+                "enable": 1,
+                "detail": "facebook"
+            }
+        },
+        "effect": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 0,
+            "comunity": 0,
+            "etc": {
+                "enable": 0,
+                "detail": ""
+            }
+        }
+    },
+    {
+        "name": "Activity C",
+        "activityType": "routine",
+        "location": "Outside",
+        "operation": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 1,
+            "comunity": 1,
+            "etc": {
+                "enable": 1,
+                "detail": "facebook"
+            }
+        },
+        "effect": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 0,
+            "comunity": 0,
+            "etc": {
+                "enable": 0,
+                "detail": ""
+            }
+        }
+    },
+    {
+        "name": "Activity D",
+        "activityType": "routine",
+        "location": "Inside",
+        "operation": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 1,
+            "comunity": 1,
+            "etc": {
+                "enable": 1,
+                "detail": "facebook"
+            }
+        },
+        "effect": {
+            "staff": 1,
+            "vendor": 1,
+            "customer": 0,
+            "comunity": 0,
+            "etc": {
+                "enable": 0,
+                "detail": ""
+            }
+        }
+    }
+]

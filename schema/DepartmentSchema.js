@@ -2,7 +2,7 @@ const connectDB = require('../connectDB');
 const schema = connectDB.mongoose.Schema;
 const departmentSchema = new schema({
     name: String,
-    compay: {
+    company: {
         type: schema.Types.ObjectId,
         ref: 'compamies'
     },

@@ -1,0 +1,23 @@
+[{
+        "name": "Area A",
+        "areaType": "Inside"
+    },
+    {
+        "name": "Area B",
+        "areaType": "Outside"
+    }, {
+        "name": "Area C",
+        "areaType": "Inside"
+    },
+    {
+        "name": "Area D",
+        "areaType": "Outside"
+    }, {
+        "name": "Area E",
+        "areaType": "Inside"
+    },
+    {
+        "name": "Area F",
+        "areaType": "Outside"
+    }
+]

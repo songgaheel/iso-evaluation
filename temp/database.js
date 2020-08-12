@@ -4,5 +4,5 @@ const config = {
     useNewUrlParser: true,
 };
 
-const connectionString = 'mongodb://127.0.0.1:27017/';
+const connectionString = 'mongodb+srv://songbank:Ece44ecE47kmutNb@cluster0.suzuv.gcp.mongodb.net/test';
 mongoose.connect(connectionString, config).then(() => console.log('Connected to MongoDB')).catch(err => console.log('Cannot cennect to MongoDB', err));
