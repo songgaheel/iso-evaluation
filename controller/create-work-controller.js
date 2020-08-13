@@ -32,6 +32,43 @@ async function CreateWorkListDataStep2(req, res) {
     console.log(data);
 }
 
+async function CreateWorkListDataStep3(req, res) {
+    const area = req.body;
+    const area_inside = [{}];
+    const area_outside = [{}];
+    console.log(area);
+
+    for (let index = 0; index < area._id.length; index++) {
+        console.log('for ', index);
+        area_inside[index] = await Area.findOne({
+                _id: area._id[index],
+                areaType: [
+                    "inside"
+                ]
+            })
+            .populate({
+                path: 'activities'
+            });
+        area_outside[index] = await Area.findOne({
+                _id: area._id[index],
+                areaType: [
+                    "outside"
+                ]
+            })
+            .populate({
+                path: 'activities'
+            });
+        if (index == area._id.length - 1) {
+            let ret = {
+                area_inside,
+                area_outside
+            };
+            res.send(ret);
+            console.log(ret);
+        }
+    }
+}
+
 async function createWork(req, res) {
     const work = {
         name: req.body.name,
@@ -58,3 +95,4 @@ async function createWork(req, res) {
 module.exports.createWork = createWork;
 module.exports.CreateWorkListDataStep1 = CreateWorkListDataStep1;
 module.exports.CreateWorkListDataStep2 = CreateWorkListDataStep2;
+module.exports.CreateWorkListDataStep3 = CreateWorkListDataStep3;

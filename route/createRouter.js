@@ -24,16 +24,13 @@ router
 // Create Work
 router
     .route('/home/work/step1')
-    .post(createWork.CreateWorkListDataStep1);
+    .get(createWork.CreateWorkListDataStep1);
 router
     .route('/home/work/step2')
-    .post(createWork.CreateWorkListDataStep2);
+    .get(createWork.CreateWorkListDataStep2);
 router
     .route('/home/work/step3')
-    .post(createWork.CreateWorkListDataStep1);
-router
-    .route('/home/work/step4')
-    .post(createWork.CreateWorkListDataStep1);
+    .get(createWork.CreateWorkListDataStep3);
 router
     .route('/home/work/complete')
     .post(createWork.createWork);

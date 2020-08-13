@@ -5,6 +5,7 @@ const loginController = require('./controller/login-controller');
 const createRouter = require('./route/createRouter');
 const homeRouter = require('./route/homeRouter');
 const updateRouter = require('./route/updateRouter');
+const workRouter = require('./route/workRouter');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.post('/login', loginController.login);
 app.use('/create', createRouter);
 app.use('/home', homeRouter);
 app.use('/update', updateRouter);
+app.use('/work', workRouter);
 
 const port = process.env.port || 5000;
 app.listen(port, function() {
