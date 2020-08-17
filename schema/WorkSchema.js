@@ -3,7 +3,7 @@ const schema = connectDB.mongoose.Schema;
 const workSchema = new schema({
     name: String,
     createDate: Date,
-    progress: String, // 1 2 3 4 and complete
+    progress: { type: String, enum: ['1', '2', '3', '4', 'complete'] },
     modifiedDate: Date,
     user: {
         type: schema.Types.ObjectId,
@@ -17,14 +17,26 @@ const workSchema = new schema({
         type: schema.Types.ObjectId,
         ref: 'departments'
     },
-    areas: [{
-        type: schema.Types.ObjectId,
-        ref: 'areas'
-    }],
-    activities: [{
-        type: schema.Types.ObjectId,
-        ref: 'activities'
-    }],
+    insideAreas: {
+        areas: [{
+            type: schema.Types.ObjectId,
+            ref: 'areas'
+        }],
+        activities: [{
+            type: schema.Types.ObjectId,
+            ref: 'activities'
+        }]
+    },
+    outsideAreas: {
+        areas: [{
+            type: schema.Types.ObjectId,
+            ref: 'areas'
+        }],
+        activities: [{
+            type: schema.Types.ObjectId,
+            ref: 'activities'
+        }]
+    },
     evaluateworks: [{
         type: schema.Types.ObjectId,
         ref: 'evaluateworks'

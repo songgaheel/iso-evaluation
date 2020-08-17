@@ -5,20 +5,43 @@ const evaluateworkSchema = new schema({
         type: schema.Types.ObjectId,
         ref: 'works'
     },
+    progress: { type: String, enum: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'complete'] },
     evaluateDate: Date,
     evaluateNumber: Number,
-    evaluateType: [{
-            type: String,
-            defalt: 'Year',
-            text: Date,
+    evaluateType: {
+        type: String,
+        enum: ['Year', 'Before Changing', 'Continue', 'After Changing', 'Accident']
+    },
+    riskinsideAreas: [{
+        order: Number,
+        areas: {
+            type: schema.Types.ObjectId,
+            ref: 'areas'
         },
-        { type: String, defalt: 'Before Changing' },
-        { type: String, defalt: 'Continue' },
-        { type: String, defalt: 'After Changing' },
-        { type: String, defalt: "Accident" },
-    ],
-    matchrisk: [{
-        orders: Number,
+        activities: {
+            type: schema.Types.ObjectId,
+            ref: 'activities'
+        },
+        risks: {
+            type: schema.Types.ObjectId,
+            ref: 'risks'
+        },
+        evaluate: {
+            p1: Number,
+            p2: Number,
+            p3: Number,
+            p4: Number,
+            p5: Number,
+            p: Number,
+            r1: Number,
+            r2: Number,
+            r: Number,
+            pr: Number,
+            level: String, //N, L, M, H and D
+        }
+    }],
+    riskoutsideAreas: [{
+        order: Number,
         areas: {
             type: schema.Types.ObjectId,
             ref: 'areas'

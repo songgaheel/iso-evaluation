@@ -7,8 +7,8 @@ const improveworkSchema = new schema({
     },
     createdate: Date,
     ImproveNumber: Number,
-    matchrisk: [{
-        orders: Number,
+    riskinsideAreas: [{
+        order: Number,
         areas: {
             type: schema.Types.ObjectId,
             ref: 'areas'
@@ -26,5 +26,25 @@ const improveworkSchema = new schema({
             ref: 'improves'
         }
     }],
+    riskoutsideAreas: [{
+        order: Number,
+        areas: {
+            type: schema.Types.ObjectId,
+            ref: 'areas'
+        },
+        activities: {
+            type: schema.Types.ObjectId,
+            ref: 'activities'
+        },
+        risks: {
+            type: schema.Types.ObjectId,
+            ref: 'risks'
+        },
+        improve: {
+            type: schema.Types.ObjectId,
+            ref: 'improves'
+        }
+    }]
+
 });
 module.exports.improveworkSchema = improveworkSchema;

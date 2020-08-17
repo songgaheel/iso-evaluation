@@ -7,8 +7,8 @@ const wiSchema = new schema({
     },
     createdate: Date,
     wiNumber: Number,
-    matchrisk: [{
-        orders: Number,
+    riskinsideAreas: [{
+        order: Number,
         areas: {
             type: schema.Types.ObjectId,
             ref: 'areas'
@@ -40,5 +40,39 @@ const wiSchema = new schema({
             },
         }
     }],
+    riskoutsideAreas: [{
+        order: Number,
+        areas: {
+            type: schema.Types.ObjectId,
+            ref: 'areas'
+        },
+        activities: {
+            type: schema.Types.ObjectId,
+            ref: 'activities'
+        },
+        risks: {
+            type: schema.Types.ObjectId,
+            ref: 'risks'
+        },
+        wi: {
+            resource: {
+                enable: Boolean,
+                detail: String,
+            },
+            pollution: {
+                enable: Boolean,
+                detail: String,
+            },
+            safety: {
+                enable: Boolean,
+                detail: String,
+            },
+            health: {
+                enable: Boolean,
+                detail: String,
+            },
+        }
+    }]
+
 });
 module.exports.wiSchema = wiSchema;

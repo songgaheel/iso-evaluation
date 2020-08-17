@@ -2,8 +2,14 @@ const connectDB = require('../connectDB');
 const schema = connectDB.mongoose.Schema;
 const activitySchema = new schema({
     name: String,
-    activityType: [{ type: String, defalt: 'routine' }, { type: String, defalt: 'non-routine' }], // routine or non-routine
-    location: [{ type: String, defalt: 'Inside' }, { type: String, defalt: 'Outside' }], // inside or outside
+    activityType: {
+        type: String,
+        enum: ['routine', 'non-routine']
+    }, // routine or non-routine
+    location: {
+        type: String,
+        enum: ['inside', 'outside']
+    }, // inside or outside
     operation: {
         staff: Boolean,
         vendor: Boolean,
