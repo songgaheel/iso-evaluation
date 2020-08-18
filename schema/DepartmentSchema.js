@@ -4,12 +4,8 @@ const departmentSchema = new schema({
     name: String,
     company: {
         type: schema.Types.ObjectId,
-        ref: 'compamies'
+        ref: 'companies'
     },
-    users: [{
-        type: schema.Types.ObjectId,
-        ref: 'users'
-    }],
     areas: [{
         type: schema.Types.ObjectId,
         ref: 'areas'
